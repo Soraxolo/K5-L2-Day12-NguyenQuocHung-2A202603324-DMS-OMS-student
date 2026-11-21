@@ -248,10 +248,10 @@ def check_code_confirmed():
     if not os.path.exists(p):
         return
     txt = open(p, encoding="utf-8").read()
-    if "CHƯA XÁC NHẬN VỚI COACH" in txt:
-        say("FAIL", "TEAM.md: mã bộ ảnh chưa xác nhận với coach",
-            "hỏi coach mã của mình; nếu khác thì chạy tools/setup_pack.py <mã đúng> và gán lại, "
-            "nếu đúng thì xoá khối cảnh báo trong TEAM.md")
+    if "CHUA-XAC-NHAN-COACH" in txt or "CHƯA XÁC NHẬN" in txt.upper():
+        say("FAIL", "TEAM.md: còn dấu mốc CHUA-XAC-NHAN-COACH",
+            "hỏi coach (1) mã G05 có đúng không, (2) review chéo làm trên mã G02 có được không; "
+            "xác nhận xong thì xoá dấu mốc và khối ⚠ trong TEAM.md")
     m = re.search(r"Mã bộ ảnh:\s*\*\*(G\d{2})\*\*", txt)
     if m and not os.path.isdir(os.path.join(ROOT, m.group(1))):
         say("WARN", f"TEAM.md ghi mã {m.group(1)} nhưng không thấy thư mục {m.group(1)}/ trong repo")
