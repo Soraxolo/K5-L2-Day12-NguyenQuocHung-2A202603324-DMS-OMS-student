@@ -115,6 +115,24 @@ def main():
     except FileNotFoundError:
         pass
 
+    # 5b. gom 22 ảnh cốt lõi vào một thư mục bằng hardlink (chọn 1 lần trong CVAT)
+    core = os.path.join(dest, "core22")
+    os.makedirs(core, exist_ok=True)
+    made = 0
+    for sub, files in (("oms", CORE_OMS), ("driver", CORE_DRIVER)):
+        for f in files:
+            src_f, dst_f = os.path.join(dest, sub, f), os.path.join(core, f)
+            if os.path.exists(dst_f):
+                continue
+            try:
+                os.link(src_f, dst_f)       # hardlink: không tốn thêm đĩa
+            except OSError:
+                shutil.copy2(src_f, dst_f)  # khác filesystem thì đành copy
+            made += 1
+    n_core = len([f for f in os.listdir(core) if f.endswith(".png")])
+    print(f"{code}/core22/: {n_core} ảnh (tạo mới {made}) — chọn cả thư mục này trong CVAT là đủ 22 ảnh, "
+          f"không lẫn S09/S10 hay manifest.csv")
+
     # 6. in đúng 22 đường dẫn để chọn trong CVAT
     print(f"\n22 ảnh CỐT LÕI cần chọn khi tạo task `Day12-{code}` (dán vào ô tìm hoặc chọn tay):")
     for f in CORE_OMS:

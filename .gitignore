@@ -14,3 +14,6 @@ __pycache__/
 
 # file export giả để chạy thử cabin_check, không phải bài nộp
 tools/demo/
+
+# thu muc hardlink 22 anh cot loi, khong phai bai nop
+G*/core22/

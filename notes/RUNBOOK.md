@@ -216,3 +216,18 @@ rm -rf ~/day12-dms-oms/G*/
 
 Mặt tài xế trên ảnh 1280 px thường rộng vài trăm px → ngưỡng 60 px của `face13` hầu như luôn đạt;
 nhưng vẫn phải **đo** trước khi vẽ, đừng cho là đương nhiên.
+
+## Thứ tự khung trong CVAT
+
+CVAT xếp ảnh theo thứ tự chữ cái, nên task `Day12-G05` sẽ có thứ tự:
+
+```
+D01 … D06, S01_ir, S01_rgb, S02_ir, S02_rgb, … S08_ir, S08_rgb
+```
+
+Hai điều cần để ý:
+
+- **`_ir` đứng TRƯỚC `_rgb`** trong từng cảnh. Nhưng quy trình là gán `_rgb` trước rồi copy sang
+  `_ir` (GUIDE Task 1), nên đừng gán tuần tự theo thứ tự khung — nhảy bằng `F`/`D` cho đúng cặp.
+- **D01 là khung đầu task**, không phải S01. Checkpoint A vẫn là S01–S02, nên vào task phải nhảy
+  xuống khung S01_rgb trước, đừng gán D01 chỉ vì nó hiện ra đầu.
