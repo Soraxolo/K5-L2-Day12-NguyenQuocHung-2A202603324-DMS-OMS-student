@@ -58,3 +58,23 @@ của chúng phải khớp nhau. Lần sau, trước khi chọn `glasses`, mình
 và các cờ che của `face13` cùng khung — có `unknown` hoặc cờ che ở vùng mắt thì `glasses` khó mà
 là một giá trị khẳng định. Đây cũng là lý do rubric cho điểm review chéo: một mình mình không thấy
 mâu thuẫn đó, phải có người đọc bài mình bằng con mắt khác mới lộ ra.
+
+
+## 4. Ghi chú về `ir_log.csv` — chưa đủ 4 quan sát
+
+Nộp với **2 quan sát** thay vì 4 như rubric E4 yêu cầu. Nêu rõ ở đây thay vì viết cho đủ số:
+
+| Khung | Nguồn | Có thật |
+|---|---|---|
+| `D01` | `real_IR` | Rút từ chính bản nhãn: `eye_right = unknown` kèm cờ che 8/13 điểm `face13` |
+| `S03_ir` | `IR_sim` | Soi cặp `S03_rgb` / `S03_ir`, kết luận hình dạng vẫn đủ để giữ `type = box` |
+
+Hai quan sát còn thiếu đáng lẽ lấy từ `S01_ir` (`person.seatbelt`) và `S02_ir`
+(`child_seat.occupied`) — hai chỗ mình đang gán giá trị khẳng định (`not_worn`, `no`) nên cần kiểm
+xem trên ảnh IR còn thấy rõ không. Mình chưa soi lại hai cặp ảnh này trước khi hết giờ.
+
+Một dữ kiện liên quan, `tools/audit.py` đo được: **cả 8 cặp `_rgb`/`_ir` trong bài mình giống hệt
+nhau từng thuộc tính**, không giá trị nào bị hạ xuống khi sang ảnh IR. Điều đó có thể đúng (ảnh
+IR-sim của SVIRO là ảnh dựng, khá sạch), nhưng cũng có thể là dấu hiệu mình đã `Ctrl+V` rồi lưu mà
+chưa soi lại ảnh `_ir` — đúng cái bẫy COMMON_ERRORS cảnh báo. Mình sẽ soi lại và bổ sung
+`ir_log.csv` theo RULES §6 nếu coach cho hạn bổ sung.
