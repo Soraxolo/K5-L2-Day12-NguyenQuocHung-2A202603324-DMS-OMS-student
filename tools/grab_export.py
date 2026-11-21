@@ -21,6 +21,22 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DL = os.path.join(os.path.expanduser("~"), "Downloads")
 IMG = (".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff")
 ALLOWED = {"part_A", "part_B", "export_final", "export_final_v2", "export_extra", "peer_export_final"}
+# tên ngoài danh sách SUBMISSION vẫn cho, chỉ cảnh báo (ví dụ export của mã thứ hai để review chéo)
+EXTRA_OK = re.compile(r"^[A-Za-z0-9_\-]{1,40}$")
+
+
+def _task_of_job(job_id):
+    """Tra tên task từ job id (chỉ chạy được khi CVAT local đang bật). Hai gói Gxx dùng chung tên ảnh,
+    nên job id là cách duy nhất phân biệt export của task nào."""
+    try:
+        import subprocess
+        q = ("select t.name from engine_task t join engine_segment s on s.task_id=t.id "
+             f"join engine_job j on j.segment_id=s.id where j.id={int(job_id)};")
+        out = subprocess.run(["docker", "exec", "cvat_db", "psql", "-U", "root", "-d", "cvat", "-t", "-A", "-c", q],
+                             capture_output=True, text=True, timeout=10)
+        return out.stdout.strip() or None
+    except Exception:
+        return None
 
 
 def main():
@@ -38,8 +54,11 @@ def main():
 
     name = re.sub(r"\.zip$", "", args.name)
     if name not in ALLOWED:
-        print(f"LỖI: tên '{name}' không nằm trong danh sách SUBMISSION: {', '.join(sorted(ALLOWED))}")
-        return 1
+        if not EXTRA_OK.match(name):
+            print(f"LỖI: tên '{name}' không hợp lệ. Tên trong SUBMISSION: {', '.join(sorted(ALLOWED))}")
+            return 1
+        print(f"CHÚ Ý: '{name}' không nằm trong danh sách SUBMISSION ({', '.join(sorted(ALLOWED))}) "
+              "— preflight sẽ không đóng gói file này.")
 
     if args.src:
         src = args.src
@@ -72,6 +91,10 @@ def main():
         return 1
 
     root = ET.fromstring(z.read(xmls[0]))
+    job = root.find("meta/job/id")
+    if job is not None:
+        who = _task_of_job(job.text)
+        print(f"Job id: {job.text}" + (f"  → task \"{who}\"" if who else ""))
     images = root.findall("image")
     done = [i for i in images if any(t.get("label") == "frame_meta" for t in i.findall("tag"))]
     names = sorted(os.path.splitext(i.get("name", "").split("/")[-1])[0] for i in images)
