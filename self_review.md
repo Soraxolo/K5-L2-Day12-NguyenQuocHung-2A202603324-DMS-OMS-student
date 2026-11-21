@@ -36,6 +36,13 @@ thì lần thứ ba ở S05 đã không xảy ra.
 Lỗi hạng hai cùng tính chất: ghi `light = day` trên ảnh SVIRO ở **hai** khung (S01_rgb, S04_rgb) —
 cũng là gán một giá trị mình không kiểm chứng được, trái luật chung 4.4-1.
 
+**Bằng chứng là mình đã sửa được thói quen này:** cuối buổi mình gán thêm một bộ 22 ảnh của mã G02
+(để có bộ ảnh chung với một bạn mà làm review chéo, vì không ai cùng mã G05 với mình). Ở bộ G02,
+lỗi `seat = driver` sau khi copy `_rgb` → `_ir` **không tái diễn lần nào**, và `tools/audit.py`
+báo cả 8 cặp `_rgb`/`_ir` khớp nhau hoàn toàn. Bộ G05 mất ba vòng export–sửa mới sạch, bộ G02 chỉ
+mất hai. Cái sửa được là thao tác: sau mỗi lần dán sang ảnh `_ir`, mở DETAILS đọc lại `seat` của
+từng hộp trước khi `Ctrl+S`.
+
 ## 3. Ghi chú về disagreement_log
 
 <!-- Điền sau khi chạy: python3 scripts/cabin_check.py diff export_final.zip peer_export_final.zip --csv disagreement_log.csv -->
