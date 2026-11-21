@@ -11,3 +11,6 @@ __pycache__/
 *.pyc
 .DS_Store
 .env*
+
+# file export giả để chạy thử cabin_check, không phải bài nộp
+tools/demo/
