@@ -7,8 +7,26 @@ Python: `python3` 3.12.7 (lệnh trong tài liệu viết `python` → trên má
 > Lớp dùng v2.82.0, máy này v2.74.1. Lab chạy được trên 2.7x — `INSTALL_CVAT.md` §7 đã nói
 > riêng về bản 2.7x ("menu vẽ chỉ hiện tooltip khi rê, phải bấm vào biểu tượng").
 > **Đừng nâng cấp hôm nay**: nâng cấp CVAT giữa buổi có rủi ro mất dữ liệu Day 11 đang nằm trong
-> cùng volume. Nếu skeleton `face13` không tạo được trên 2.74.1 thì mới báo coach và xử lý.
-> Tuyệt đối không chạy `docker compose down -v`.
+> cùng volume. Tuyệt đối không chạy `docker compose down -v`.
+>
+> **Đã xác nhận v2.74.1 tương thích** (21/11, lúc tạo project `Day12`): 9 nhãn đúng kiểu,
+> `face13` là skeleton với đủ 13 sublabel đúng tên, `svg` giữ nguyên 13 `<circle>` + 13 `<line>`.
+> Không cần nâng lên v2.82.0.
+
+## Kiểm môi trường bằng DB (chỉ đọc)
+
+```bash
+docker exec cvat_db psql -U root -d cvat -t -A -F' | ' -c "select t.id, t.name, (select count(*) from engine_image i where i.data_id=t.data_id) from engine_task t where t.name like 'Day12%' order by t.id desc;"
+```
+
+Task `Day12-G05` phải ra **22**. Xem đúng 22 ảnh nào:
+
+```bash
+docker exec cvat_db psql -U root -d cvat -t -A -c "select regexp_replace(i.path,'^.*/','') from engine_image i join engine_task t on t.data_id=i.data_id where t.name='Day12-G05' order by i.frame;"
+```
+
+Tạo task sai ảnh thì **xoá cả task** trên giao diện (⋮ Actions → Delete), không xoá bằng DB.
+CVAT không cho thêm/bớt ảnh trong task đã tạo. Project `Day12` giữ nguyên, không phải tạo lại nhãn.
 
 ---
 
