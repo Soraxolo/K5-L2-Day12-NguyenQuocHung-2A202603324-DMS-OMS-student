@@ -1,6 +1,10 @@
 # TEAM — Ngày 12
 
-Mã bộ ảnh: **Gxx** · Hình thức: **cá nhân**
+Mã bộ ảnh: **G05** · Hình thức: **cá nhân**
+
+> ⚠ **CHƯA XÁC NHẬN VỚI COACH.** Mã G05 là mã mình tự chọn từ bundle `G01–G12` để bắt đầu làm,
+> chưa đối chiếu với mã coach giao. Phải xác nhận trước khi nộp: nếu coach giao mã khác thì
+> gán lại trên gói đúng (`python3 tools/setup_pack.py <mã đúng>`) và xoá dòng này.
 
 | Họ tên | MSSV | Đã gán đủ 22 ảnh? | Review chéo với (peer diff) | Số dòng disagreement đã xử lý |
 |---|---|---|---|---|

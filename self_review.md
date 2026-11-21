@@ -1,4 +1,4 @@
-# Tự đánh giá — Nguyễn Quốc Hùng · Gxx
+# Tự đánh giá — Nguyễn Quốc Hùng · G05
 
 ## 1. Tự rà soát 4 cảnh
 

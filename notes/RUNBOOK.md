@@ -204,3 +204,15 @@ git push
 rm -rf ~/day12-dms-oms/G*/
 ```
 `docker compose down -v` chỉ chạy khi thật sự không cần dữ liệu CVAT nữa — nó xóa cả Day 11.
+
+---
+
+## Kích thước ảnh của gói (đọc từ header PNG, không mở ảnh)
+
+| Thư mục | Kích thước | Ghi chú |
+|---|---|---|
+| `oms/` S01–S08 (16 ảnh) | **960 × 640** | Ba ghế sau trải trên 960 px → mỗi ghế chỉ ~320 px. Nhớ zoom trong CVAT để box ôm sát mép (quy tắc 4.4-5) |
+| `driver/` D01–D06 (6 ảnh) | **1280 × 1024** | Ảnh **ngang**, nhưng **nội dung** xoay ~90°: đầu tài xế ở phía phải ảnh. Tỷ lệ khung không cho biết điều đó — phải nhìn trên màn hình |
+
+Mặt tài xế trên ảnh 1280 px thường rộng vài trăm px → ngưỡng 60 px của `face13` hầu như luôn đạt;
+nhưng vẫn phải **đo** trước khi vẽ, đừng cho là đương nhiên.

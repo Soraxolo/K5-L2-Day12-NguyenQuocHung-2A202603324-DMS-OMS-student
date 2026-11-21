@@ -242,6 +242,21 @@ def check_placeholders():
                 "chọn 2 ảnh S## và 2 ảnh D##, ghi loại lỗi (hoặc ok) cho từng đối tượng")
 
 
+def check_code_confirmed():
+    """Mã Gxx phải là mã coach giao, không phải mã tự chọn."""
+    p = os.path.join(ROOT, "TEAM.md")
+    if not os.path.exists(p):
+        return
+    txt = open(p, encoding="utf-8").read()
+    if "CHƯA XÁC NHẬN VỚI COACH" in txt:
+        say("FAIL", "TEAM.md: mã bộ ảnh chưa xác nhận với coach",
+            "hỏi coach mã của mình; nếu khác thì chạy tools/setup_pack.py <mã đúng> và gán lại, "
+            "nếu đúng thì xoá khối cảnh báo trong TEAM.md")
+    m = re.search(r"Mã bộ ảnh:\s*\*\*(G\d{2})\*\*", txt)
+    if m and not os.path.isdir(os.path.join(ROOT, m.group(1))):
+        say("WARN", f"TEAM.md ghi mã {m.group(1)} nhưng không thấy thư mục {m.group(1)}/ trong repo")
+
+
 def check_no_images_in_repo():
     """RULES §2 + SUBMISSION điều 4."""
     found = []
@@ -317,6 +332,7 @@ def main():
     check_disagreement()
     check_class_list()
     check_placeholders()
+    check_code_confirmed()
     check_no_images_in_repo()
 
     order = {"FAIL": 0, "WARN": 1, "INFO": 2, "OK": 3}
