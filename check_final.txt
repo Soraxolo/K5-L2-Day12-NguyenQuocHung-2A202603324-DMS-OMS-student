@@ -1,9 +1,15 @@
 File: export_final.zip
-Ảnh: 22 · đã có frame_meta: 21 · số đối tượng: child_seat=4, face=13, face13=4, hand=12, infant_seat=8, object=10, person=14, phone=1
+Ảnh: 22 · đã có frame_meta: 22 · số đối tượng: child_seat=4, face=13, face13=4, hand=12, infant_seat=8, object=10, person=14, phone=1
   [WARN] D02.png: eye_left=open nhưng cả 4 điểm left_eye_* đều bị che: không thấy mắt thì eye_left nên là unknown
   [WARN] D02.png: eye_right=open nhưng cả 4 điểm right_eye_* đều bị che: không thấy mắt thì eye_right nên là unknown
-  [ERROR] D06.png: cần đúng 1 tag frame_meta, đang có 0
-  [WARN] D06.png: eye_left=unknown nhưng không điểm left_eye_* nào có cờ occluded/outside: nếu mắt bị che thì bật occluded, nếu thấy rõ thì chọn open/closed
-  [WARN] D06.png: eye_right=unknown nhưng không điểm right_eye_* nào có cờ occluded/outside: nếu mắt bị che thì bật occluded, nếu thấy rõ thì chọn open/closed
-  [WARN] S05_ir.png: person: seat=driver trên ảnh SVIRO (camera chỉ nhìn hàng ghế sau)
-Kết quả: 1 lỗi, 5 cảnh báo. Cảnh báo cần bạn tự xét, không tự động là sai.
+Kết quả: 0 lỗi, 2 cảnh báo. Cảnh báo cần bạn tự xét, không tự động là sai.
+
+--- Giải thích các cảnh báo còn lại (RUBRIC E2) ---
+
+D02.png — WARN "eye_left=open / eye_right=open nhưng cả 4 điểm *_eye_* đều bị che":
+Hai giá trị này không mâu thuẫn trong khung D02. Mình thấy rõ khe mắt của cả hai mắt đang mở nên
+ghi open theo GUIDE §4.5 ("thấy khe mắt mở" = open). Nhưng vị trí chính xác của bốn mốc từng mắt
+(khóe ngoài, khóe trong, mép mí trên, mép mí dưới) thì bị che nên mình không đặt được chắc chắn;
+theo GUIDE §4.6 mình đặt điểm ở vị trí ước lượng và bật cờ occluded thay vì "đặt điểm cho đủ".
+Nghĩa là: trạng thái mắt thì quan sát được, còn toạ độ mốc thì suy ra — hai mức chắc chắn khác nhau,
+và cờ occluded chính là chỗ ghi lại sự khác nhau đó.

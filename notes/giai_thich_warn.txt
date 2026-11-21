@@ -1,0 +1,10 @@
+
+--- Giải thích các cảnh báo còn lại (RUBRIC E2) ---
+
+D02.png — WARN "eye_left=open / eye_right=open nhưng cả 4 điểm *_eye_* đều bị che":
+Hai giá trị này không mâu thuẫn trong khung D02. Mình thấy rõ khe mắt của cả hai mắt đang mở nên
+ghi open theo GUIDE §4.5 ("thấy khe mắt mở" = open). Nhưng vị trí chính xác của bốn mốc từng mắt
+(khóe ngoài, khóe trong, mép mí trên, mép mí dưới) thì bị che nên mình không đặt được chắc chắn;
+theo GUIDE §4.6 mình đặt điểm ở vị trí ước lượng và bật cờ occluded thay vì "đặt điểm cho đủ".
+Nghĩa là: trạng thái mắt thì quan sát được, còn toạ độ mốc thì suy ra — hai mức chắc chắn khác nhau,
+và cờ occluded chính là chỗ ghi lại sự khác nhau đó.
