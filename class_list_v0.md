@@ -1,4 +1,4 @@
-# Danh sách lớp v0 — Nguyễn Quốc Hùng · G05
+# Danh sách lớp v0 — Nguyễn Quốc Hùng · G02
 
 Viết tiếp từ slide 54. Mỗi lớp trả lời: **model cần nhận ra cái này để làm gì?**
 Cột cuối ghi theo kinh nghiệm gán 22 khung hôm nay (16 khung SVIRO IR-sim + 6 khung NIR thật).
@@ -59,7 +59,10 @@ guideline + `cabin_schema.py` vẫn cấm nên chọn `yes` sẽ thành một ER
 chính thức ở v1.x chứ? Nếu có thì `GUIDE` §4.8 và `cabin_schema.py` sẽ được sửa cùng lúc chứ, hay
 lớp phải chọn theo file nào trước?
 
-Khung ví dụ: `[điền tên khung — ảnh S## có child_seat mà lòng ghế bị khăn/áo phủ, ví dụ S06_ir]`
+Khung ví dụ: **S03_rgb** (và S03_ir, S04, S05, S06, S08 — cùng một tình huống): có trẻ em
+đang ngồi trong ghế trẻ em. Mình không vẽ box theo phán quyết coach; bạn review chéo lại vẽ
+`child_seat` với `occupied = yes` theo file nhãn coach gửi bổ sung — hai cách hiểu trái ngược
+nhau trên cùng một khung, xem `disagreement_log.csv`.
 
 Mình tạm gán thế nào và vì sao: `occupied = unknown`. Theo luật chung 4.4-1 "không thấy thì `unknown`":
 mình không thấy lòng ghế nên không được ghi `no`. Ghi `no` ở đây là **khẳng định ghế trống** —

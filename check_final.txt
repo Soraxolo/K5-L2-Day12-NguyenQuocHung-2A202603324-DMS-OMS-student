@@ -1,15 +1,3 @@
 File: export_final.zip
-Ảnh: 22 · đã có frame_meta: 22 · số đối tượng: child_seat=4, face=13, face13=4, hand=12, infant_seat=8, object=10, person=14, phone=1
-  [WARN] D02.png: eye_left=open nhưng cả 4 điểm left_eye_* đều bị che: không thấy mắt thì eye_left nên là unknown
-  [WARN] D02.png: eye_right=open nhưng cả 4 điểm right_eye_* đều bị che: không thấy mắt thì eye_right nên là unknown
-Kết quả: 0 lỗi, 2 cảnh báo. Cảnh báo cần bạn tự xét, không tự động là sai.
-
---- Giải thích các cảnh báo còn lại (RUBRIC E2) ---
-
-D02.png — WARN "eye_left=open / eye_right=open nhưng cả 4 điểm *_eye_* đều bị che":
-Hai giá trị này không mâu thuẫn trong khung D02. Mình thấy rõ khe mắt của cả hai mắt đang mở nên
-ghi open theo GUIDE §4.5 ("thấy khe mắt mở" = open). Nhưng vị trí chính xác của bốn mốc từng mắt
-(khóe ngoài, khóe trong, mép mí trên, mép mí dưới) thì bị che nên mình không đặt được chắc chắn;
-theo GUIDE §4.6 mình đặt điểm ở vị trí ước lượng và bật cờ occluded thay vì "đặt điểm cho đủ".
-Nghĩa là: trạng thái mắt thì quan sát được, còn toạ độ mốc thì suy ra — hai mức chắc chắn khác nhau,
-và cờ occluded chính là chỗ ghi lại sự khác nhau đó.
+Ảnh: 22 · đã có frame_meta: 22 · số đối tượng: child_seat=2, face=10, face13=6, hand=12, infant_seat=2, object=8, person=10, phone=1
+Kết quả: 0 lỗi, 0 cảnh báo. Cảnh báo cần bạn tự xét, không tự động là sai.

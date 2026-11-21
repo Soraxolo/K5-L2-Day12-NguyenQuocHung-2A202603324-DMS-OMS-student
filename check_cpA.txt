@@ -1,6 +1,9 @@
-File: part_A.zip · chỉ kiểm ảnh: S01, S02
+--- Ghi chú trung thực về thời điểm chạy ---
+File này KHÔNG được chạy tại mốc checkpoint trong buổi. Bộ G02 mình gán liền mạch cuối buổi
+rồi mới export, nên bản kiểm phạm vi này chạy trên chính export_final.zip sau khi cả 22 ảnh
+đã xong. Các mốc checkpoint trong buổi mình chạy trên bộ G05 (bộ tập, không nộp).
+Đã báo lại với coach.
+
+File: export_final.zip · chỉ kiểm ảnh: S01, S02
 Ảnh: 4 · đã có frame_meta: 4 · số đối tượng: child_seat=2, face=2, infant_seat=2, object=2, person=2
-  [WARN] S01_ir.png: object: seat=driver trên ảnh SVIRO (camera chỉ nhìn hàng ghế sau)
-  [WARN] S01_rgb.png: ảnh SVIRO là ảnh dựng: light nên là 'unknown'
-  [WARN] S02_ir.png: infant_seat: seat=driver trên ảnh SVIRO (camera chỉ nhìn hàng ghế sau)
-Kết quả: 0 lỗi, 3 cảnh báo. Cảnh báo cần bạn tự xét, không tự động là sai.
+Kết quả: 0 lỗi, 0 cảnh báo. Cảnh báo cần bạn tự xét, không tự động là sai.

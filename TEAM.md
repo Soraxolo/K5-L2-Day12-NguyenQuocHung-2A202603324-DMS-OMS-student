@@ -1,34 +1,25 @@
 # TEAM — Ngày 12
 
-Mã bộ ảnh: **G05** · Hình thức: **cá nhân**
+Mã bộ ảnh: **G02** · Hình thức: **cá nhân**
 
 <!-- CHUA-XAC-NHAN-COACH: xoá dòng này VÀ khối ⚠ bên dưới sau khi coach xác nhận cả hai việc -->
 
-> ⚠ **HAI VIỆC CẦN COACH XÁC NHẬN**
+> ⚠ **CẦN COACH XÁC NHẬN MÃ**
 >
-> 1. **Mã G05 chưa được coach xác nhận.** Lớp phát bundle chứa cả 12 mã, mình chọn G05 để bắt đầu
->    làm. Nếu coach giao mã khác thì mình gán lại trên gói đúng.
-> 2. **Review chéo làm trên mã G02, không phải G05.** Lý do ở mục dưới. Mong coach xác nhận cách
->    này chấp nhận được, hoặc chỉ cách khác.
+> Lớp phát bundle chứa cả 12 mã. Mình làm mã **G02** vì đó là mã bạn
+> Hoàng Trọng Trà đang làm, nên có bản thứ hai để review chéo (RULES §1: mỗi mã ít nhất 2 người).
+> Nếu coach đã giao cho mình mã khác thì mình gán lại trên gói đúng.
 >
-> Xoá khối này sau khi coach xác nhận cả hai.
+> Xoá dấu mốc ở trên và khối này sau khi coach xác nhận.
 
-## Vì sao review chéo làm trên mã khác
+## Ghi chú về khối lượng
 
-Không tìm được bạn nào cùng mã **G05**, nên không có bản thứ hai để `cabin_check diff`.
-Giải pháp: mình gán **thêm một bộ 22 ảnh của mã G02** — bộ mà bạn Hoàng Trọng Trà đang làm — để
-hai người có **cùng bộ ảnh** mà đối chiếu, đúng tinh thần Task 3 (so hai cách hiểu guideline của
-hai người, trên cùng khung hình).
-
-Tổng cộng mình tự gán **44 ảnh**: 22 ảnh G05 (bài nộp E1) và 22 ảnh G02 (chỉ để review chéo).
-Cả hai bộ đều `cabin_check` **0 lỗi**.
-
-- `export_final.zip` = **G05**, là bài nộp E1
-- `disagreement_log.csv` = kết quả `diff` trên **G02**
+Trong buổi mình gán **44 ảnh**: một bộ 22 ảnh mã G05 làm bộ tập (không nộp), và bộ 22 ảnh
+mã **G02** là bài nộp này. Cả hai bộ đều `cabin_check` **0 lỗi**.
 
 | Họ tên | MSSV | Đã gán đủ 22 ảnh? | Review chéo với (peer diff) | Số dòng disagreement đã xử lý |
 |---|---|---|---|---|
-| Nguyễn Quốc Hùng | 2A202603324 | có (G05 và G02, 44 ảnh) | Hoàng Trọng Trà — 2A202603342 (trên mã G02) | 11 / 88 |
+| Nguyễn Quốc Hùng | 2A202603324 | có (22 ảnh G02; thêm 22 ảnh G05 làm bộ tập) | Hoàng Trọng Trà — 2A202603342 | 11 / 88 |
 
 Ca hai bạn vẫn không thống nhất và đã hỏi coach (ghi tên ảnh + đối tượng):
 
@@ -48,8 +39,8 @@ Ca hai bạn vẫn không thống nhất và đã hỏi coach (ghi tên ảnh + 
 ## Cá nhân
 
 ### NguyenQuocHung-2A202603324
-- **Phần mình làm:** tự gán đủ 22 ảnh cốt lõi G05 (S01–S08 × 2 modality, D01–D06) trên CVAT local
+- **Phần mình làm:** tự gán đủ 22 ảnh cốt lõi G02 (S01–S08 × 2 modality, D01–D06) trên CVAT local
   của mình; chạy `cabin_check` ở Checkpoint A, Checkpoint B và lần cuối (`check_final.txt` 0 lỗi);
-  gán thêm 22 ảnh G02 để tạo bộ ảnh chung cho review chéo; `diff` với bạn Trà và xử lý các dòng
+  `diff` với bạn Trà và xử lý các dòng
   bất đồng theo mục guideline; phát hiện và báo lại cho bạn Trà 10 lỗi `occupied = yes`.
 - **Điều mình học được hôm nay:** …

@@ -1,3 +1,1 @@
 frame_id,source,phenomenon,affected_field,effect_on_label
-S01_ir,IR_sim,"mất màu nên không phân biệt được túi vải với hộp, chỉ còn hình dạng",object.type,"hạ từ bag (RGB) xuống other; không chép theo ảnh RGB cùng cảnh"
-S05_ir,IR_sim,"dây an toàn cùng độ sáng với áo tối, không thấy dải chéo vai-hông",person.seatbelt,"hạ từ not_worn (RGB) xuống unknown theo luật chung 4.4-1"
