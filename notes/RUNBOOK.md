@@ -14,26 +14,34 @@ Python: `python3` 3.12.7 (lệnh trong tài liệu viết `python` → trên má
 
 ## Bước 0 — chép bộ ảnh (14:00)
 
-Coach phát `Gxx.zip`. Giải nén rồi chép thư mục `Gxx/` vào **trong** repo:
+Coach phát **một bundle chứa cả 12 mã**: `~/Downloads/Day12_learner_bundles_G01-G12-*.zip`.
+Đã giải nén sẵn 12 gói ra `~/day12-bundles/` (`G01.zip` … `G12.zip`, mỗi gói ~19–20 MB).
+
+**Chỉ được dùng gói của mã coach giao cho mình.** Dùng sai mã thì nhãn của mình bị so với đáp án
+SVIRO của mã khác, và `diff` với bạn cùng mã sẽ là hai bộ ảnh khác nhau.
+
+Một lệnh làm hết Bước 0 (thay `G05` bằng mã thật):
 
 ```bash
-unzip ~/Downloads/G05.zip -d ~/day12-dms-oms/
+cd ~/day12-dms-oms && python3 tools/setup_pack.py G05
 ```
 
-(thay `G05` bằng mã thật). Kiểm:
+Script sẽ: kiểm gói có đủ 22 ảnh cốt lõi → đọc `manifest.csv` xem xe nào (quyết định `rear_middle`
+có hợp lệ) → giải nén vào repo → điền mã vào `TEAM.md`, `class_list_v0.md`, `self_review.md`,
+`exit_ticket.md`, `prompts.md` → kiểm `.gitignore` có chặn ảnh → in đúng 22 đường dẫn cần chọn
+trong CVAT và ba lệnh checkpoint đã điền sẵn mã.
 
-```bash
-ls ~/day12-dms-oms/G*/oms ~/day12-dms-oms/G*/driver | head -40
-```
+Xem trước mà không ghi gì: thêm `--dry-run`.
 
-Phải thấy `S01_rgb.png … S10_ir.png`, `manifest.csv`, `D01.png … D06.png`.
-`.gitignore` đã chặn `G[0-9][0-9]/` và `*.png` → ảnh không bị commit. **Đừng** `git add -f` ảnh.
+**Đã kiểm cả 12 gói:** gói nào cũng có 20 ảnh `oms/` (S01–S10 ×2) + 6 ảnh `driver/` (D01–D06)
++ `ATTRIBUTION.txt`, `SOURCES.txt`, `labels_cabin_v1.json`, hai `manifest.csv`, và một thư mục
+`scripts/` **bản cũ — không dùng** (README dặn chỉ chạy `scripts/` của repo).
 
-Ghi mã `Gxx` vào `TEAM.md` và `class_list_v0.md` ngay (đang là chữ `Gxx`):
+**Mọi cảnh của cả 12 mã đều là xe `x5` (BMW X5) → có đủ 3 ghế sau, `rear_middle` hợp lệ.**
 
-```bash
-cd ~/day12-dms-oms && sed -i 's/\bGxx\b/G05/g' TEAM.md class_list_v0.md self_review.md exit_ticket.md
-```
+**Truyền `--manifest Gxx/oms/manifest.csv`** — đúng file `oms`. File `Gxx/driver/manifest.csv` chỉ
+có cột `group,name`, không có cột `car`, nên vô dụng với `cabin_check` (không gây lỗi, chỉ không
+có tác dụng).
 
 ## Bước 0b — chạy thử script (2 phút, làm trước khi gán)
 
@@ -86,7 +94,6 @@ Export task → `part_A.zip`, để trong `~/day12-dms-oms/`, rồi:
 cd ~/day12-dms-oms && python3 scripts/cabin_check.py check part_A.zip --only S01,S02 --expect 4 --manifest G*/oms/manifest.csv --out check_cpA.txt
 ```
 
-Muốn chắc dòng `--manifest` nở đúng một file thì gõ thẳng đường dẫn, ví dụ `--manifest G05/oms/manifest.csv`.
 
 - Phải thấy `Ảnh: 4 · đã có frame_meta: 4`.
 - **Trên 3 ERROR trong 4 ảnh này** → chuyển lộ trình **Hỗ trợ** (GUIDE §5) trước khi gán tiếp.
