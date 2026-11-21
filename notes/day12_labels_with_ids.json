@@ -1,0 +1,428 @@
+[
+  {
+    "id": 120,
+    "name": "face",
+    "color": "#90e8ce",
+    "type": "rectangle",
+    "attributes": [
+      {
+        "id": 65,
+        "name": "eye_left",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "unknown",
+        "values": [
+          "unknown",
+          "open",
+          "closed"
+        ]
+      },
+      {
+        "id": 66,
+        "name": "eye_right",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "unknown",
+        "values": [
+          "unknown",
+          "open",
+          "closed"
+        ]
+      },
+      {
+        "id": 67,
+        "name": "glasses",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "unknown",
+        "values": [
+          "unknown",
+          "none",
+          "clear",
+          "sun"
+        ]
+      },
+      {
+        "id": 68,
+        "name": "gaze_zone",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "other",
+        "values": [
+          "other",
+          "road",
+          "mirror_l",
+          "mirror_r",
+          "mirror_c",
+          "cluster",
+          "center",
+          "lap"
+        ]
+      }
+    ],
+    "has_parent": false
+  },
+  {
+    "id": 121,
+    "name": "face13",
+    "color": "#b20052",
+    "type": "skeleton",
+    "attributes": [],
+    "sublabels": [
+      {
+        "id": 122,
+        "name": "left_eye_outer",
+        "color": "#4e0817",
+        "type": "points",
+        "attributes": [],
+        "has_parent": true
+      },
+      {
+        "id": 123,
+        "name": "left_eye_inner",
+        "color": "#9c1852",
+        "type": "points",
+        "attributes": [],
+        "has_parent": true
+      },
+      {
+        "id": 124,
+        "name": "left_eye_upper",
+        "color": "#456ee7",
+        "type": "points",
+        "attributes": [],
+        "has_parent": true
+      },
+      {
+        "id": 125,
+        "name": "left_eye_lower",
+        "color": "#8089d3",
+        "type": "points",
+        "attributes": [],
+        "has_parent": true
+      },
+      {
+        "id": 126,
+        "name": "right_eye_outer",
+        "color": "#874e49",
+        "type": "points",
+        "attributes": [],
+        "has_parent": true
+      },
+      {
+        "id": 127,
+        "name": "right_eye_inner",
+        "color": "#bad528",
+        "type": "points",
+        "attributes": [],
+        "has_parent": true
+      },
+      {
+        "id": 128,
+        "name": "right_eye_upper",
+        "color": "#f193c9",
+        "type": "points",
+        "attributes": [],
+        "has_parent": true
+      },
+      {
+        "id": 129,
+        "name": "right_eye_lower",
+        "color": "#f0b8ff",
+        "type": "points",
+        "attributes": [],
+        "has_parent": true
+      },
+      {
+        "id": 130,
+        "name": "nose_tip",
+        "color": "#8fc09c",
+        "type": "points",
+        "attributes": [],
+        "has_parent": true
+      },
+      {
+        "id": 131,
+        "name": "mouth_left",
+        "color": "#09548f",
+        "type": "points",
+        "attributes": [],
+        "has_parent": true
+      },
+      {
+        "id": 132,
+        "name": "mouth_right",
+        "color": "#885658",
+        "type": "points",
+        "attributes": [],
+        "has_parent": true
+      },
+      {
+        "id": 133,
+        "name": "lip_upper",
+        "color": "#5195e3",
+        "type": "points",
+        "attributes": [],
+        "has_parent": true
+      },
+      {
+        "id": 134,
+        "name": "lip_lower",
+        "color": "#e0f474",
+        "type": "points",
+        "attributes": [],
+        "has_parent": true
+      }
+    ],
+    "svg": "<line x1=\"80\" y1=\"30\" x2=\"70\" y2=\"25\" data-type=\"edge\" data-node-from=\"1\" data-node-to=\"3\"></line><line x1=\"80\" y1=\"30\" x2=\"70\" y2=\"35\" data-type=\"edge\" data-node-from=\"1\" data-node-to=\"4\"></line><line x1=\"60\" y1=\"30\" x2=\"70\" y2=\"25\" data-type=\"edge\" data-node-from=\"2\" data-node-to=\"3\"></line><line x1=\"60\" y1=\"30\" x2=\"70\" y2=\"35\" data-type=\"edge\" data-node-from=\"2\" data-node-to=\"4\"></line><line x1=\"20\" y1=\"30\" x2=\"30\" y2=\"25\" data-type=\"edge\" data-node-from=\"5\" data-node-to=\"7\"></line><line x1=\"20\" y1=\"30\" x2=\"30\" y2=\"35\" data-type=\"edge\" data-node-from=\"5\" data-node-to=\"8\"></line><line x1=\"40\" y1=\"30\" x2=\"30\" y2=\"25\" data-type=\"edge\" data-node-from=\"6\" data-node-to=\"7\"></line><line x1=\"40\" y1=\"30\" x2=\"30\" y2=\"35\" data-type=\"edge\" data-node-from=\"6\" data-node-to=\"8\"></line><line x1=\"65\" y1=\"75\" x2=\"50\" y2=\"70\" data-type=\"edge\" data-node-from=\"10\" data-node-to=\"12\"></line><line x1=\"65\" y1=\"75\" x2=\"50\" y2=\"82\" data-type=\"edge\" data-node-from=\"10\" data-node-to=\"13\"></line><line x1=\"35\" y1=\"75\" x2=\"50\" y2=\"70\" data-type=\"edge\" data-node-from=\"11\" data-node-to=\"12\"></line><line x1=\"35\" y1=\"75\" x2=\"50\" y2=\"82\" data-type=\"edge\" data-node-from=\"11\" data-node-to=\"13\"></line><line x1=\"50\" y1=\"55\" x2=\"50\" y2=\"70\" data-type=\"edge\" data-node-from=\"9\" data-node-to=\"12\"></line><circle r=\"1.5\" cx=\"80\" cy=\"30\" data-type=\"element node\" data-element-id=\"1\" data-node-id=\"1\" data-label-id=\"122\"></circle><circle r=\"1.5\" cx=\"60\" cy=\"30\" data-type=\"element node\" data-element-id=\"2\" data-node-id=\"2\" data-label-id=\"123\"></circle><circle r=\"1.5\" cx=\"70\" cy=\"25\" data-type=\"element node\" data-element-id=\"3\" data-node-id=\"3\" data-label-id=\"124\"></circle><circle r=\"1.5\" cx=\"70\" cy=\"35\" data-type=\"element node\" data-element-id=\"4\" data-node-id=\"4\" data-label-id=\"125\"></circle><circle r=\"1.5\" cx=\"20\" cy=\"30\" data-type=\"element node\" data-element-id=\"5\" data-node-id=\"5\" data-label-id=\"126\"></circle><circle r=\"1.5\" cx=\"40\" cy=\"30\" data-type=\"element node\" data-element-id=\"6\" data-node-id=\"6\" data-label-id=\"127\"></circle><circle r=\"1.5\" cx=\"30\" cy=\"25\" data-type=\"element node\" data-element-id=\"7\" data-node-id=\"7\" data-label-id=\"128\"></circle><circle r=\"1.5\" cx=\"30\" cy=\"35\" data-type=\"element node\" data-element-id=\"8\" data-node-id=\"8\" data-label-id=\"129\"></circle><circle r=\"1.5\" cx=\"50\" cy=\"55\" data-type=\"element node\" data-element-id=\"9\" data-node-id=\"9\" data-label-id=\"130\"></circle><circle r=\"1.5\" cx=\"65\" cy=\"75\" data-type=\"element node\" data-element-id=\"10\" data-node-id=\"10\" data-label-id=\"131\"></circle><circle r=\"1.5\" cx=\"35\" cy=\"75\" data-type=\"element node\" data-element-id=\"11\" data-node-id=\"11\" data-label-id=\"132\"></circle><circle r=\"1.5\" cx=\"50\" cy=\"70\" data-type=\"element node\" data-element-id=\"12\" data-node-id=\"12\" data-label-id=\"133\"></circle><circle r=\"1.5\" cx=\"50\" cy=\"82\" data-type=\"element node\" data-element-id=\"13\" data-node-id=\"13\" data-label-id=\"134\"></circle>",
+    "has_parent": false
+  },
+  {
+    "id": 135,
+    "name": "hand",
+    "color": "#f08cb3",
+    "type": "rectangle",
+    "attributes": [
+      {
+        "id": 69,
+        "name": "whose",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "driver",
+        "values": [
+          "driver",
+          "passenger"
+        ]
+      },
+      {
+        "id": 70,
+        "name": "side",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "left",
+        "values": [
+          "left",
+          "right"
+        ]
+      },
+      {
+        "id": 71,
+        "name": "on_wheel",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "unknown",
+        "values": [
+          "unknown",
+          "yes",
+          "no"
+        ]
+      }
+    ],
+    "has_parent": false
+  },
+  {
+    "id": 136,
+    "name": "phone",
+    "color": "#48068a",
+    "type": "rectangle",
+    "attributes": [
+      {
+        "id": 72,
+        "name": "state",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "held",
+        "values": [
+          "held",
+          "mounted",
+          "lap"
+        ]
+      }
+    ],
+    "has_parent": false
+  },
+  {
+    "id": 137,
+    "name": "person",
+    "color": "#c06060",
+    "type": "rectangle",
+    "attributes": [
+      {
+        "id": 73,
+        "name": "seat",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "driver",
+        "values": [
+          "driver",
+          "front_passenger",
+          "rear_left",
+          "rear_middle",
+          "rear_right"
+        ]
+      },
+      {
+        "id": 74,
+        "name": "seatbelt",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "unknown",
+        "values": [
+          "unknown",
+          "worn_correct",
+          "worn_incorrect",
+          "not_worn"
+        ]
+      }
+    ],
+    "has_parent": false
+  },
+  {
+    "id": 138,
+    "name": "child_seat",
+    "color": "#21168f",
+    "type": "rectangle",
+    "attributes": [
+      {
+        "id": 75,
+        "name": "seat",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "driver",
+        "values": [
+          "driver",
+          "front_passenger",
+          "rear_left",
+          "rear_middle",
+          "rear_right"
+        ]
+      },
+      {
+        "id": 76,
+        "name": "occupied",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "unknown",
+        "values": [
+          "unknown",
+          "no",
+          "yes"
+        ]
+      }
+    ],
+    "has_parent": false
+  },
+  {
+    "id": 139,
+    "name": "infant_seat",
+    "color": "#e42647",
+    "type": "rectangle",
+    "attributes": [
+      {
+        "id": 77,
+        "name": "seat",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "driver",
+        "values": [
+          "driver",
+          "front_passenger",
+          "rear_left",
+          "rear_middle",
+          "rear_right"
+        ]
+      },
+      {
+        "id": 78,
+        "name": "facing",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "rear",
+        "values": [
+          "rear",
+          "front"
+        ]
+      }
+    ],
+    "has_parent": false
+  },
+  {
+    "id": 140,
+    "name": "object",
+    "color": "#40e020",
+    "type": "rectangle",
+    "attributes": [
+      {
+        "id": 79,
+        "name": "seat",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "driver",
+        "values": [
+          "driver",
+          "front_passenger",
+          "rear_left",
+          "rear_middle",
+          "rear_right"
+        ]
+      },
+      {
+        "id": 80,
+        "name": "type",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "other",
+        "values": [
+          "other",
+          "bag",
+          "box",
+          "cup"
+        ]
+      }
+    ],
+    "has_parent": false
+  },
+  {
+    "id": 141,
+    "name": "frame_meta",
+    "color": "#d45b19",
+    "type": "tag",
+    "attributes": [
+      {
+        "id": 81,
+        "name": "modality",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "ir",
+        "values": [
+          "ir",
+          "rgb"
+        ]
+      },
+      {
+        "id": 82,
+        "name": "light",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "unknown",
+        "values": [
+          "unknown",
+          "day",
+          "night"
+        ]
+      },
+      {
+        "id": 83,
+        "name": "camera_blocked",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "no",
+        "values": [
+          "no",
+          "yes"
+        ]
+      }
+    ],
+    "has_parent": false
+  }
+]

@@ -38,6 +38,17 @@ Bộ cốt lõi là **BMW X5 → có đủ 3 ghế sau**. `rear_middle` hợp l�
 
 Chai nước / cốc / kính trên tay tài xế ở D##: **không vẽ gì cả** (DMS không có `object`, và nó không phải `phone`).
 
+## 2b. Trẻ em đang ngồi → KHÔNG gán gì cho vị trí ghế đó
+
+Phán quyết của coach trong buổi (21/11). Thấy một đứa trẻ **đang ngồi** trong ghế trẻ em:
+
+- **Không** vẽ `person` cho đứa trẻ
+- **Không** vẽ `child_seat` cho cái ghế đó — §4.1 định nghĩa `child_seat` là ghế **đang trống**
+- Ghi khung đó vào `notes/ca_kho.md`, **không** đếm vào số ghế trống
+
+Ghế trẻ em / nôi xách **đang trống** thì vẫn gán bình thường.
+Giá trị `occupied = yes` coach thêm vào schema: **không dùng** cho bộ ảnh hôm nay.
+
 ## 3. Giá trị mặc định CVAT điền sẵn = bẫy
 
 CVAT tự điền giá trị **đầu danh sách** cho mọi thuộc tính. Vẽ xong là phải mở **DETAILS** sửa ngay:

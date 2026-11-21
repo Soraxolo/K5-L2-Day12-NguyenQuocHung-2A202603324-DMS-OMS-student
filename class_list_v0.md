@@ -51,7 +51,10 @@ kèm một box `child_seat` riêng cùng `seat`? Nếu là (b) thì `occupied` c
 §4.8, §4.9 vẫn ghi "không có `yes`", và `scripts/cabin_schema.py` vẫn chỉ cho `unknown`/`no` nên
 chọn `yes` là một ERROR của `cabin_check`. Bản coach gửi để ở `notes/labels_cabin_v1_coach_update.json`;
 coach yêu cầu bổ sung nên mình đã thêm giá trị `yes` vào attribute `occupied` của project, nhưng
-**không dùng** `yes` cho 22 khung hôm nay — bộ ảnh cốt lõi không có trẻ em ngồi (GUIDE §3), và
+**không dùng** `yes` cho 22 khung hôm nay. **Coach đã trả lời trực tiếp trong buổi: gặp trẻ em đang
+ngồi trên ghế thì không gán nhãn** — tức là vị trí ghế đó không có box nào, kể cả box `child_seat`.
+Phán quyết này đóng lại ca thực tế, nhưng chưa đóng câu hỏi cho v1.x: sản phẩm OMS thật **cần** nhận
+ra trẻ đang ngồi (tắt túi khí, nhắc quên trẻ trong xe), nên không thể mãi để nó ngoài từ vựng — bộ ảnh cốt lõi không có trẻ em ngồi (GUIDE §3), và
 guideline + `cabin_schema.py` vẫn cấm nên chọn `yes` sẽ thành một ERROR. Câu hỏi vì vậy thành: giá trị `yes` sẽ
 chính thức ở v1.x chứ? Nếu có thì `GUIDE` §4.8 và `cabin_schema.py` sẽ được sửa cùng lúc chứ, hay
 lớp phải chọn theo file nào trước?
