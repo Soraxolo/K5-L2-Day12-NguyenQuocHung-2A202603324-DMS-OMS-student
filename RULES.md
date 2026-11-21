@@ -30,8 +30,6 @@ Lý do: SVIRO dùng giấy phép CC BY-NC-SA 4.0, còn Drive&Act chỉ cho phép
 ## 3. Dùng AI
 
 - **Được** hỏi AI về CVAT, Python, cách hiểu một khái niệm (NIR, gaze zone…), hoặc nhờ AI góp ý câu chữ của danh sách lớp.
-- **Không được** đưa ảnh cabin hay ảnh tài xế cho AI, kể cả ảnh chụp màn hình. Không nhờ AI tự gán nhãn.
-- Ghi mọi lần dùng AI vào `prompts.md` (mẫu ở [templates/prompts.md](templates/prompts.md)): công cụ, câu hỏi, bạn dùng kết quả thế nào. Không dùng AI thì ghi "Không dùng".
 
 ## 4. Khi kẹt
 

@@ -46,6 +46,15 @@ Nhưng chức năng OMS quan trọng nhất của ghế trẻ em là **biết c�
 kèm một box `child_seat` riêng cùng `seat`? Nếu là (b) thì `occupied` của box `child_seat` đó ghi gì —
 `unknown`, hay vẫn `no` vì "không thấy lòng ghế"?
 
+**Bằng chứng mới (21/11, trong buổi):** coach gửi thêm một bản `labels_cabin_v1.json` trong đó
+`child_seat.occupied` có thêm giá trị **`yes`** — đúng chỗ mình đặt câu hỏi. Nhưng `GUIDE.md` §4.1,
+§4.8, §4.9 vẫn ghi "không có `yes`", và `scripts/cabin_schema.py` vẫn chỉ cho `unknown`/`no` nên
+chọn `yes` là một ERROR của `cabin_check`. Bản coach gửi để ở `notes/labels_cabin_v1_coach_update.json`;
+mình **không** import và **không** dùng `yes` cho 22 khung hôm nay, vì bộ ảnh cốt lõi không có trẻ em
+ngồi (GUIDE §3) và vì guideline + script tự kiểm vẫn cấm. Câu hỏi vì vậy thành: giá trị `yes` sẽ
+chính thức ở v1.x chứ? Nếu có thì `GUIDE` §4.8 và `cabin_schema.py` sẽ được sửa cùng lúc chứ, hay
+lớp phải chọn theo file nào trước?
+
 Khung ví dụ: `[điền tên khung — ảnh S## có child_seat mà lòng ghế bị khăn/áo phủ, ví dụ S06_ir]`
 
 Mình tạm gán thế nào và vì sao: `occupied = unknown`. Theo luật chung 4.4-1 "không thấy thì `unknown`":

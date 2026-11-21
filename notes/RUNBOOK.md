@@ -249,3 +249,19 @@ Hai điều cần để ý:
   `_ir` (GUIDE Task 1), nên đừng gán tuần tự theo thứ tự khung — nhảy bằng `F`/`D` cho đúng cặp.
 - **D01 là khung đầu task**, không phải S01. Checkpoint A vẫn là S01–S02, nên vào task phải nhảy
   xuống khung S01_rgb trước, đừng gán D01 chỉ vì nó hiện ra đầu.
+
+## File nhãn coach gửi thêm (21/11, trong buổi)
+
+`notes/labels_cabin_v1_coach_update.json` — khác bản trong repo **đúng một chỗ**:
+`child_seat.occupied` thêm giá trị `yes`.
+
+**Không import, không dùng `yes`.** Lý do:
+
+- `scripts/cabin_schema.py:48` vẫn chỉ cho `unknown`/`no` → chọn `yes` là **ERROR** của `cabin_check`,
+  `check_final.txt` không ra được "0 lỗi" (mất điểm E1, E2)
+- `GUIDE.md` §4.1, §4.8, §4.9 vẫn ghi "không có `yes`" / "Không dùng `yes`"
+- Bộ ảnh cốt lõi không có trẻ em ngồi (GUIDE §3) → hôm nay không có ca nào cần `yes`
+- Coach chấm bằng script của coach, nên **không sửa `cabin_schema.py`** cho khớp: sửa thì máy mình
+  báo sạch mà máy coach vẫn báo lỗi
+
+Đã ghi mâu thuẫn này thành bằng chứng cho câu leo thang số 1 trong `class_list_v0.md`.
