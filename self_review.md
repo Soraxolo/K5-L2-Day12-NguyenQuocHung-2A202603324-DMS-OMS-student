@@ -1,4 +1,4 @@
-# Tự đánh giá — Nguyễn Quốc Hùng · G02
+# Tự đánh giá — Nguyễn Quốc Hưng · G02
 
 Trong buổi mình gán hai bộ: **G05** làm bộ tập (không nộp) và **G02** là bài nộp này.
 Phần tự đánh giá dưới đây lấy lỗi thật từ các vòng export–kiểm của cả hai bộ.

@@ -1,4 +1,4 @@
-# Khai báo dùng AI — Nguyễn Quốc Hùng
+# Khai báo dùng AI — Nguyễn Quốc Hưng
 
 Nhắc lại: không đưa ảnh cabin hay ảnh tài xế (kể cả ảnh chụp màn hình) cho bất kỳ công cụ AI nào.
 **Không có ảnh nào được đưa cho AI trong buổi này.** Toàn bộ việc gán nhãn 22 ảnh do mình tự làm

@@ -1,4 +1,4 @@
-# Danh sách lớp v0 — Nguyễn Quốc Hùng · G02
+# Danh sách lớp v0 — Nguyễn Quốc Hưng · G02
 
 Viết tiếp từ slide 54. Mỗi lớp trả lời: **model cần nhận ra cái này để làm gì?**
 Cột cuối ghi theo kinh nghiệm gán 22 khung hôm nay (16 khung SVIRO IR-sim + 6 khung NIR thật).
