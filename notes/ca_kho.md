@@ -22,3 +22,5 @@ thì vô hại, nhưng chọn nó sẽ thành `[ERROR]` của `cabin_check` (xem
 | Khung | Ca | Mình xử lý | Mục guideline |
 |---|---|---|---|
 | | | | |
+| S02_rgb, S02_ir | Em bé nằm trên băng ghế (bên trái ảnh = rear_right), quấn chăn | Không gán box nào cho vị trí đó, theo phán quyết coach và GUIDE §3 | §3, §4.1 |
+| S01_rgb, S01_ir | Nôi xách bên phải ảnh (rear_left) có vẻ đang có em bé nằm bên trong | Vẫn gán `infant_seat` + `facing=rear`, vì label này không có thuộc tính `occupied` nên không khẳng định gì về người bên trong | §4.1, §4.8 |
