@@ -1,1 +1,2 @@
 frame_id,source,phenomenon,affected_field,effect_on_label
+D01,real_IR,"vùng mắt phải tài xế không đọc được trên ảnh NIR; khi đặt face13 phải bật cờ che cho 8/13 điểm",face.eye_right,"ghi unknown thay vì đoán open/closed theo mắt trái (GUIDE §4.5, luật chung 4.4-1); mắt trái đọc được nên vẫn ghi open - hai mắt gán riêng"

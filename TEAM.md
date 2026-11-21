@@ -2,24 +2,16 @@
 
 Mã bộ ảnh: **G02** · Hình thức: **cá nhân**
 
-<!-- CHUA-XAC-NHAN-COACH: xoá dòng này VÀ khối ⚠ bên dưới sau khi coach xác nhận cả hai việc -->
 
-> ⚠ **CẦN COACH XÁC NHẬN MÃ**
->
-> Lớp phát bundle chứa cả 12 mã. Mình làm mã **G02** vì đó là mã bạn
-> Hoàng Trọng Trà đang làm, nên có bản thứ hai để review chéo (RULES §1: mỗi mã ít nhất 2 người).
-> Nếu coach đã giao cho mình mã khác thì mình gán lại trên gói đúng.
->
-> Xoá dấu mốc ở trên và khối này sau khi coach xác nhận.
 
 ## Ghi chú về khối lượng
 
 Trong buổi mình gán **44 ảnh**: một bộ 22 ảnh mã G05 làm bộ tập (không nộp), và bộ 22 ảnh
 mã **G02** là bài nộp này. Cả hai bộ đều `cabin_check` **0 lỗi**.
 
-| Họ tên | MSSV | Đã gán đủ 22 ảnh? | Review chéo với (peer diff) | Số dòng disagreement đã xử lý |
-|---|---|---|---|---|
-| Nguyễn Quốc Hùng | 2A202603324 | có (22 ảnh G02; thêm 22 ảnh G05 làm bộ tập) | Hoàng Trọng Trà — 2A202603342 | 11 / 88 |
+| Họ tên           | MSSV        | Đã gán đủ 22 ảnh?                           | Review chéo với (peer diff)   | Số dòng disagreement đã xử lý |
+| ---------------- | ----------- | ------------------------------------------- | ----------------------------- | ----------------------------- |
+| Nguyễn Quốc Hưng | 2A202603324 | có (22 ảnh G02; thêm 22 ảnh G05 làm bộ tập) | Hoàng Trọng Trà — 2A202603342 | 11 / 88                       |
 
 Ca hai bạn vẫn không thống nhất và đã hỏi coach (ghi tên ảnh + đối tượng):
 

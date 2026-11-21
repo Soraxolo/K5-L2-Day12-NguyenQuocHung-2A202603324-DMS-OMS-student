@@ -40,6 +40,21 @@ sau khi `Ctrl+V` từ ảnh `_rgb` sang `_ir` — **ba lần** (`S01_ir.object`,
 
 ## 3. Ghi chú về disagreement_log
 
-Một dòng bạn của mình đúng và mình sai: …
+**Một dòng bạn của mình đúng và mình sai:** khung **`D01`**, thuộc tính `face.glasses` —
+mình ghi `clear`, bạn Hoàng Trọng Trà ghi `unknown` (`disagreement_log.csv`, `guideline_rule = 4.5`).
 
-Mình học được gì từ dòng đó: …
+Bạn ấy đúng, và bằng chứng nằm ngay trong bài của chính mình: trên khung D01 mình đã bật cờ che cho
+**8 trên 13** điểm `face13`, trong đó có cả bốn điểm mắt phải, và ghi `eye_right = unknown` vì không
+đọc được vùng mắt phải. Vậy mà cùng khung đó mình lại khẳng định `glasses = clear` — tức là khẳng
+định tài xế đang đeo kính cận và mình nhìn xuyên được tròng. Hai nhận định này không đứng chung
+được: nếu vùng mắt đủ rõ để kết luận loại kính thì mắt phải đã không phải `unknown`.
+
+GUIDE §4.5 nói đúng tình huống này: `glasses = unknown` khi không nhìn rõ vùng mắt, và cảnh báo
+"trên NIR, kính râm có thể trông trong suốt". Mình đã đọc câu đó lúc đầu buổi nhưng chỉ áp cho
+`none`, không nghĩ nó áp cả cho `clear`.
+
+**Mình học được gì từ dòng đó:** hai trường mô tả cùng một vùng trên khuôn mặt thì mức chắc chắn
+của chúng phải khớp nhau. Lần sau, trước khi chọn `glasses`, mình nhìn lại `eye_left`/`eye_right`
+và các cờ che của `face13` cùng khung — có `unknown` hoặc cờ che ở vùng mắt thì `glasses` khó mà
+là một giá trị khẳng định. Đây cũng là lý do rubric cho điểm review chéo: một mình mình không thấy
+mâu thuẫn đó, phải có người đọc bài mình bằng con mắt khác mới lộ ra.

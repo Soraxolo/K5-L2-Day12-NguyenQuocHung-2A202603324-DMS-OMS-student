@@ -68,24 +68,29 @@ Mình tạm gán thế nào và vì sao: `occupied = unknown`. Theo luật chung
 mình không thấy lòng ghế nên không được ghi `no`. Ghi `no` ở đây là **khẳng định ghế trống** —
 đúng là dạy model điều mình không kiểm chứng được.
 
-**2. DMS cấm vẽ `object`, nên hành vi phụ như uống nước không để lại bằng chứng nào trong nhãn.**
+**2. `gaze_zone` là thuộc tính bắt buộc của mọi box `face`, nhưng không có giá trị cho "không xác định được".**
 
-Câu hỏi: GUIDE §4.2 ghi DMS "không vẽ `object`, cũng không ghi là `phone`" cho chai, cốc, kính trên tay;
-và §4.7 chỉ cho vẽ `phone` khi thấy cạnh/góc/màn hình. Nhưng Drive&Act quay đúng các hành vi đó
-(uống nước, tháo kính, gọi điện) và đó là mất tập trung thật. Kết quả là khung "tài xế đang uống nước"
-và khung "tài xế đưa tay không lên gần mặt" có **nhãn giống nhau hoàn toàn**: `person` + `face` +
-`face13` + hai `hand`, `gaze_zone` có thể cùng là `other`. Model không thể phân biệt.
-Vậy v1.x sẽ: (a) mở `object` cho DMS với `type` thêm `bottle`/`cup`, (b) thêm thuộc tính
-`activity` trên `person`, hay (c) chủ ý bỏ hành vi phụ ra khỏi phạm vi và chỉ phát hiện điện thoại?
-Nếu là (c) thì đánh giá model về mất tập trung sẽ thiếu hẳn một nhóm nguyên nhân.
+Câu hỏi: GUIDE §4.5 cho `other` khi hướng nhìn "ngoài các vùng trên **hoặc không chắc**" — gộp hai
+thứ khác hẳn nhau vào một nhãn. Khung tài xế nhìn ra cửa sổ bên (xác định được, chỉ là ngoài danh
+sách) và khung mình không đọc nổi hướng mắt trên ảnh NIR đều thành `other`. Model học mất tập trung
+sẽ coi `other` là **một vùng nhìn**, trong khi một phần số khung `other` thật ra là "không biết".
+Và `other` cũng chính là giá trị CVAT điền sẵn, nên nhãn này không phân biệt được ba trạng thái:
+đã xét và chọn `other`, đã xét nhưng không đọc được, và chưa xét bao giờ. v1.x có nên tách
+`gaze_zone = undeterminable` không?
 
-Khung ví dụ: `[điền tên khung — ảnh D## tài xế cầm chai/cốc đưa lên gần mặt]`
+Khung ví dụ: **cả 6 khung D01–D06** trong bài này đều là `gaze_zone = other`. Trên ảnh NIR xoay 90°,
+không màu, mình dựa được vào hướng đầu nhưng không đủ chắc để chọn `road` hay `center` cho khung nào.
 
-Mình tạm gán thế nào và vì sao: làm **đúng** v1.0 — không vẽ gì cho chai, chỉ vẽ `hand` với
-`on_wheel = no`, và ghi khung này vào ghi chú ca khó. Theo RULES §4: guideline không nói tới thì
-không tự đặt luật mới, nên mình không tự mở thêm label.
+Mình tạm gán thế nào và vì sao: để `other` cho cả 6, theo đúng chữ của §4.5 ("hoặc không chắc"),
+và ghi lý do ở đây thay vì chọn bừa một vùng cụ thể.
 
 ### Hai câu dự phòng (nếu coach đã trả lời hai câu trên)
+
+3b. **DMS cấm vẽ `object`, nên hành vi phụ không để lại bằng chứng nào trong nhãn.** §4.2 ghi DMS
+   "không vẽ `object`, cũng không ghi là `phone`" cho chai, cốc, kính trên tay; §4.7 chỉ cho vẽ
+   `phone` khi thấy cạnh/góc/màn hình. Kết quả: khung "tài xế đang uống nước" và khung "tài xế đưa
+   tay không lên gần mặt" có nhãn **giống hệt nhau** — `person` + `face` + `face13` + hai `hand`,
+   `gaze_zone` cùng là `other`. Model không phân biệt được. v1.x xử lý thế nào?
 
 3. `gaze_zone` là thuộc tính **bắt buộc** của mọi box `face`, nhưng không có giá trị cho
    "không xác định được hướng nhìn". §4.5 cho `other` khi "ngoài các vùng trên **hoặc không chắc"** —
