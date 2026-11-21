@@ -255,7 +255,10 @@ Hai điều cần để ý:
 `notes/labels_cabin_v1_coach_update.json` — khác bản trong repo **đúng một chỗ**:
 `child_seat.occupied` thêm giá trị `yes`.
 
-**Không import, không dùng `yes`.** Lý do:
+**Coach yêu cầu bổ sung → bổ sung giá trị vào project. Nhưng KHÔNG chọn `yes` cho 22 khung hôm nay.**
+
+Thêm một giá trị vào danh sách `values` không sinh lỗi gì; chỉ khi **chọn** `yes` cho một box thì
+`cabin_check` mới báo ERROR. Nên bổ sung vào schema là an toàn, dùng nó mới không an toàn. Lý do:
 
 - `scripts/cabin_schema.py:48` vẫn chỉ cho `unknown`/`no` → chọn `yes` là **ERROR** của `cabin_check`,
   `check_final.txt` không ra được "0 lỗi" (mất điểm E1, E2)
@@ -264,4 +267,23 @@ Hai điều cần để ý:
 - Coach chấm bằng script của coach, nên **không sửa `cabin_schema.py`** cho khớp: sửa thì máy mình
   báo sạch mà máy coach vẫn báo lỗi
 
-Đã ghi mâu thuẫn này thành bằng chứng cho câu leo thang số 1 trong `class_list_v0.md`.
+Đã ghi mâu thuẫn này thành bằng chứng cho câu leo thang số 1 trong `class_list_v0.md`, và **nên báo
+coach**: nếu bạn nào trong lớp dùng `yes` thì `check_final.txt` của bạn đó không ra được "0 lỗi".
+
+### Cách bổ sung an toàn (đừng dán cả file vào tab Raw)
+
+Tab **Raw** của project chứa `id` của từng label và từng attribute. Dán đè file của coach (không có
+`id`) có thể làm CVAT coi đó là 9 label **mới** và xoá 9 label cũ — task 21 đang trỏ vào label cũ.
+
+Làm bằng giao diện, sửa đúng một chỗ:
+
+1. **Projects** → `Day12` → mở project → tab **Labels**
+2. Tìm label `child_seat` → bấm biểu tượng **bút chì** (Edit)
+3. Trong phần attribute `occupied`, ô **values** đang có `unknown`, `no` → gõ `yes` rồi **Enter**
+4. **Done** → **Submit**
+
+Kiểm lại bằng DB:
+
+```bash
+docker exec cvat_db psql -U root -d cvat -t -A -c "select l.name, a.name, a.values from engine_attributespec a join engine_label l on l.id=a.label_id join engine_project p on p.id=l.project_id where p.name='Day12' and a.name='occupied';"
+```
